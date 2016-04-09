@@ -35,12 +35,12 @@
 
 </head>
 
-<body id="page-top" style="background-color: #F05F40">
+<body id="page-top" style="background-color: #9CCDE8">
 
     
 
   
-     <section class="bg-primary" id="about">
+     <section class="bg-primary" id="about" style="background-color: #9CCDE8">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -54,29 +54,28 @@
 	</ul>
 	<!-- fieldsets -->
 	<fieldset>
-		<h2 class="fs-title">Create your account</h2>
-		<h3 class="fs-subtitle">This is step 1</h3>
-		<input type="text" name="email" placeholder="Email" />
-		<input type="password" name="pass" placeholder="Password" />
-		<input type="password" name="cpass" placeholder="Confirm Password" />
+		<h2 class="fs-title">Get Started</h2>
+		<input type="text" name="name" placeholder="Name" />
+		<input type="email" name="email" placeholder="Email" />
+        <input type="text" name="gender" placeholder="Gender" />
+        <input type="text" name="age" placeholder="Age" />
+        <input type="text" name="zipcode" placeholder="Zip Code" />
+        <h3 class="fs-subtitle">Who are you looking for?</h3>
+        <input type="text" name="gender" placeholder="Gender" />
+        <!--<input style="color: black;" type="radio" name="gender" value="male"><label style="color:black; display:inline-block;">Male </label>
+        <input type="radio" name="gender" value="female"><label style="color:black; display:inline-block;" >Female </label> -->
 		<input type="button" name="next" class="next action-button" value="Next" />
 	</fieldset>
 	<fieldset>
-		<h2 class="fs-title">Social Profiles</h2>
-		<h3 class="fs-subtitle">Your presence on the social network</h3>
-		<input type="text" name="twitter" placeholder="Twitter" />
-		<input type="text" name="facebook" placeholder="Facebook" />
-		<input type="text" name="gplus" placeholder="Google Plus" />
+		<h2 class="fs-title">Ideal Date</h2>
+        <h3 class="fs-subtitle">How would you describe your ideal first date?</h3>
+		<textarea name="idealdate"placeholder="Romantic walk on the beach.."></textarea>
 		<input type="button" name="previous" class="previous action-button" value="Previous" />
 		<input type="button" name="next" class="next action-button" value="Next" />
 	</fieldset>
 	<fieldset>
-		<h2 class="fs-title">Personal Details</h2>
-		<h3 class="fs-subtitle">We will never sell it</h3>
-		<input type="text" name="fname" placeholder="First Name" />
-		<input type="text" name="lname" placeholder="Last Name" />
-		<input type="text" name="phone" placeholder="Phone" />
-		<textarea name="address" placeholder="Address"></textarea>
+		<h2 class="fs-title">Introduce Yourself</h2>
+		<!--<h3 class="fs-subtitle">...text...</h3> -->
 		<input type="button" name="previous" class="previous action-button" value="Previous" />
 		<input type="submit" name="submit" class="submit action-button" value="Submit" />
 	</fieldset>
