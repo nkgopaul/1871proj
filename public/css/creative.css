@@ -28,6 +28,10 @@ hr.red {
     border-color: #D10011;
 }
 
+.custom-navbar-color{
+    background-color: #9CCDE8;
+}
+
 a {
     color: #f05f40;
     -webkit-transition: all .35s;
