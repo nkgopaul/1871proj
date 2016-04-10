@@ -77,13 +77,9 @@
 		<h2 class="fs-title">Introduce Yourself</h2>
         <h3 class="fs-subtitle">Share A Short Video of Yourself</h3>
         <h4 class="fs-subtitle">How would your best friend describe you?</h4>
-        <div class = "visible-xs">
-            <input type="file" accept="video/*;capture=camcorder">
-        </div>
-        <div class = "hidden-xs">
-            <camera id='chidates' data-app-id='a-0630f9b0-e09e-0133-548f-0a4b55581b35' style="width: 270px; height: 190px; font-size: 17px;"></camera>
-
-        </div>
+        <input type="hidden" role="uploadcare-uploader"/>
+        <br>
+        <br>
 		<input type="button" name="previous" class="previous action-button" value="Previous" />
 		<input type="button" name="submit" class="submit action-button" value="Submit" onclick="submitForm()" />
 	</fieldset>
@@ -137,6 +133,13 @@
   ga('send', 'pageview');
 
 </script>
+
+<script>
+    UPLOADCARE_PUBLIC_KEY = 'd42a72db2ff5c814542c';
+    UPLOADCARE_TABS = 'camera';
+</script>
+
+<script charset="utf-8" src="https://ucarecdn.com/widget/2.8.2/uploadcare/uploadcare.full.min.js"></script>
 
 </body>
 
