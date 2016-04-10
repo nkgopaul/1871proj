@@ -27,9 +27,12 @@ app.get('/', function(req, res) {
 app.get('/signup', function(req, res) {
   res.sendFile(__dirname + '/views/signup.html');
 });
+app.get('/confirmation', function(req, res) {
+  res.sendFile(__dirname + '/views/confirmation.html');
+});
 
 //Form Route
-app.get('/submit', function(req, res){
+app.post('/submit', function(req, res){
     console.log("submit clicked");
 })
 
