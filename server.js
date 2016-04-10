@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
 
 // Force SSL
 // enable ssl redirect
-app.use(sslRedirect());
+//app.use(sslRedirect());
 
 //Routes
 app.get('/', function(req, res) {
