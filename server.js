@@ -26,7 +26,11 @@ app.get('*',function(req,res,next){
   if(req.headers['x-forwarded-proto']!='https')
     res.redirect('https://mypreferreddomain.com'+req.url)
   else
-    app.get('/', function(req, res) {
+    next() /* Continue to other routes if we're not redirecting */
+})
+
+//Routes
+app.get('/', function(req, res) {
   res.sendFile(__dirname + '/views/home.html');
 });
 app.get('/signup', function(req, res) {
@@ -40,9 +44,6 @@ app.get('/confirmation', function(req, res) {
 app.post('/submit', function(req, res){
     console.log("submit clicked");
 })
-})
-
-//Routes
 
 //Database Routes
 app.get('/db/readRecords', function(req, res){
