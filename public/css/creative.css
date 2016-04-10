@@ -44,6 +44,14 @@ a:focus {
     color: #eb3812;
 }
 
+i:hover{
+    color: grey;
+}
+
+.thanks {
+    color: black;
+}
+
 h1,
 h2,
 h3,
