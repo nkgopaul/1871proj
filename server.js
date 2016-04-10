@@ -28,6 +28,8 @@ app.get('*',function(req,res,next){
   else
     next() /* Continue to other routes if we're not redirecting */
 })
+app.use(express.static(__dirname + '/public', { redirect : false }));
+
 //Routes
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/views/home.html');
