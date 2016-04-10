@@ -21,11 +21,17 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Force SSL
-if(req.headers["x-forwarded-proto"] === "https"){
-  // OK, continue
-  return next();
+/* At the top, with other redirect methods before other routes */
+app.enable("trust proxy")
+function ensureSecure(req, res, next){
+  if(req.secure){
+    // OK, continue
+    return next();
+  };
+  res.redirect('https://'+req.host+req.url); // handle port numbers if you need non defaults
 };
-res.redirect('https://'+req.hostname+req.url);
+
+app.all('*', ensureSecure); // at top of routing calls
 
 //Routes
 app.get('/', function(req, res) {
