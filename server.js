@@ -6,6 +6,14 @@ var bodyParser = require('body-parser');
 var pg = require('pg');
 var dbFunctions = require('./controllers/dbFunctions.js');
 
+redirect_to_https = (req, res, next) ->
+  if not is_secure(req)
+    res.redirect config.SECURE_DOMAIN + req.url
+  else
+    next()
+
+app.use(redirect_to_https)
+
 //controllers
 var homeController = require('./controllers/home');
 var signupController = require('./controllers/signup');
