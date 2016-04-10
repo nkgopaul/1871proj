@@ -28,7 +28,7 @@ function ensureSecure(req, res, next){
     // OK, continue
     return next();
   };
-  res.redirect('https://'+req.host+req.url); // handle port numbers if you need non defaults
+  res.redirect('https://'+req.hostname+req.url); // handle port numbers if you need non defaults
 };
 
 app.all('*', ensureSecure); // at top of routing calls
