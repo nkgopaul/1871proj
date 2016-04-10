@@ -74,6 +74,13 @@ body {
 	color: #666;
 	margin-bottom: 20px;
 }
+
+.fs-signup-step {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
 /*progressbar*/
 #progressbar {
 	margin-bottom: 30px;
