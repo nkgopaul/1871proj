@@ -21,14 +21,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Force SSL
-// set up plain http server
-var http = express.createServer();
-
-// set up a route to redirect http to https
-http.get('*',function(req,res){  
-    res.redirect('https://chidates.com'+req.url)
+/* At the top, with other redirect methods before other routes */
+app.get('*',function(req,res,next){
+  if(req.headers['x-forwarded-proto']!='https')
+    res.redirect('https://mypreferreddomain.com'+req.url)
+  else
+    next() /* Continue to other routes if we're not redirecting */
 })
-
 //Routes
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/views/home.html');
