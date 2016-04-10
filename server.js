@@ -1,9 +1,10 @@
 var express = require('express'),
-app = express(),
-path = require('path');
+  app = express(),
+  path = require('path');
 var routes = require('routes');
 var bodyParser = require('body-parser');
 var pg = require('pg');
+var dbFunctions = require('./controllers/dbFunctions.js');
 
 //controllers
 var homeController = require('./controllers/home');
@@ -23,23 +24,30 @@ app.use(bodyParser.urlencoded({
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/views/home.html');
 });
-
 app.get('/signup', function(req, res) {
   res.sendFile(__dirname + '/views/signup.html');
 });
 
-//Database
+//Form Route
+app.get('/submit', function(req, res){
+    console.log("submit clicked");
+})
 
-pg.defaults.ssl = true;
-pg.connect(process.env.DATABASE_URL, function(err, client) {
-  if (err) throw err;
-  console.log('Connected to postgres! Getting schemas...');
-
-  client
-    .query('SELECT table_schema,table_name FROM information_schema.tables;')
-    .on('row', function(row) {
-      console.log(JSON.stringify(row));
-    });
+//Database Routes
+app.get('/db/readRecords', function(req, res){
+    dbFunctions.getRecords(req,res);
+});
+app.get('/db/addRecord', function(req, res){
+    dbFunctions.addRecord(req,res);
+});
+app.get('/db/delRecord', function(req, res){
+    dbFunctions.delRecord(req,res);
+});
+app.get('/db/createTable', function(req, res){
+    dbFunctions.createTable(req,res);
+});
+app.get('/db/dropTable', function(req, res){
+    dbFunctions.dropTable(req,res);
 });
 
 // start default server
