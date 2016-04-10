@@ -24,11 +24,10 @@ app.use(bodyParser.urlencoded({
 /* At the top, with other redirect methods before other routes */
 app.get('*',function(req,res,next){
   if(req.headers['x-forwarded-proto']!='https')
-    res.redirect('https://www.chidates.com'+req.url)
+    res.redirect('https://www.chidates.com')
   else
     next() /* Continue to other routes if we're not redirecting */
 })
-app.use(express.static(__dirname + '/public', { redirect : false }));
 
 //Routes
 app.get('/', function(req, res) {
