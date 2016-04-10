@@ -20,10 +20,13 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-
-
-//Routes
-app.get('/', function(req, res) {
+// Force SSL
+/* At the top, with other redirect methods before other routes */
+app.get('*',function(req,res,next){
+  if(req.headers['x-forwarded-proto']!='https')
+    res.redirect('https://mypreferreddomain.com'+req.url)
+  else
+    app.get('/', function(req, res) {
   res.sendFile(__dirname + '/views/home.html');
 });
 app.get('/signup', function(req, res) {
@@ -37,6 +40,9 @@ app.get('/confirmation', function(req, res) {
 app.post('/submit', function(req, res){
     console.log("submit clicked");
 })
+})
+
+//Routes
 
 //Database Routes
 app.get('/db/readRecords', function(req, res){
