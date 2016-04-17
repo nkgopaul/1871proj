@@ -130,3 +130,6 @@ body {
 	background: #D10011;
 	color: white;
 }
+#divCheckbox {
+    z-index: -1; position:relative
+}
