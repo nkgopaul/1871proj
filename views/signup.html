@@ -37,7 +37,6 @@
 
     <script>
     UPLOADCARE_PUBLIC_KEY = '4e694dcfb55828ce4d87'; //change key from widget
-    UPLOADCARE_TABS = 'camera';
 </script>
 
 <script charset="utf-8" src="https://ucarecdn.com/widget/2.8.2/uploadcare/uploadcare.full.min.js"></script>
@@ -115,10 +114,17 @@
         <h2 class="fs-title">Introduce Yourself</h2>
         <h3 class="fs-subtitle">Click 'choose a file' to record a short video</h3>
         <h4 class="fs-subtitle">How would your best friend describe you?</h4>
+                
                 <div class = "visible-xs">
                     <input type="hidden" role="uploadcare-uploader" data-tabs="file"/>
                 </div>
-                <div class = "hidden-xs">
+                <div class = "visible-sm">
+                    <input type="hidden" role="uploadcare-uploader" data-tabs="file"/>
+                </div>
+                <div class = "visible-md">
+                    <input type="hidden" role="uploadcare-uploader" data-tabs="camera"/>
+                </div>
+                <div class = "visible-lg">
                     <input type="hidden" role="uploadcare-uploader" data-tabs="camera"/>
                 </div>
         <br>
