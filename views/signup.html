@@ -173,7 +173,6 @@
     */          
         
     function submitForm() {
-        
         var usersInfo = new Firebase('https://chidates.firebaseio.com/users');
                 var name = document.getElementById("name").value;
                 var email = document.getElementById("email").value;
@@ -182,6 +181,8 @@
                 var zipcode = document.getElementById("zipcode").value;
                 var lookingfor = document.getElementById("lookingfor").value;
                 var question = document.getElementById("question").value;
+                var ucid = $("input[role='uploadcare-uploader']").val();
+                
                 usersInfo.push({
                     name: name,
                     email: email,
@@ -189,8 +190,10 @@
                     age: age,
                     zipcode: zipcode,
                     lookingfor: lookingfor,
-                    question: question
+                    question: question,
+                    ucid: ucid
                 });
+
     document.getElementById("divCheckbox").style.visibility = "visible";
     document.getElementById("divCheckbox").overflow = "hidden";
     };
